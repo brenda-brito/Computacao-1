@@ -24,7 +24,7 @@ int main(){
     if(per>x)
        printf("O perímetro é MAIOR que a área.");
     
-       if (per<x)
+       else if (per<x)
            printf("O perímetro é MENOR que a área.");
             
             else
