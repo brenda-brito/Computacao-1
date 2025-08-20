@@ -19,15 +19,15 @@ int main(){
     x = 2*(base+h);
     per= base*h;
     
-    printf("\nPerímetro: %1f\n Area:%1f\n", per,x);
+    printf("\nPerímetro: %.1f\n Area:%.1f\n", per,x);
     
     if(per>x)
-       printf("O perímetro é MAIOR que a área.");
+       printf("\nO perímetro é MAIOR que a área.");
     
        else if (per<x)
-           printf("O perímetro é MENOR que a área.");
+           printf("\nO perímetro é MENOR que a área.");
             
             else
-            printf("O perímetro é IGUAL a área.");
+            printf("\nO perímetro é IGUAL a área.");
     
 }
