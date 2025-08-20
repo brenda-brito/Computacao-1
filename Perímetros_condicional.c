@@ -12,9 +12,9 @@ int main(){
     float base, h, x, per;
     
     printf("Qual a base do triângulo? ");
-    scanf("%2f", &base);
+    scanf("%f", &base);
     printf("\nQual a altura do triângulo? ");
-    scanf("%2f", &h);
+    scanf("%f", &h);
     
     x = 2*(base+h);
     per= base*h;
