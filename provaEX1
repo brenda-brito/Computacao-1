@@ -1,0 +1,98 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define tam 50
+#define linha 3 
+#define coluna 3 
+
+void MInvertida (char str[])
+{
+    int x, y;
+    int s = strlen(str);
+    char n;
+
+    if (strchr("aeiouAEIOU", str[0]))
+        {
+            // Substituição do for por while:
+            // for (l=0, m=v-1; l<m; l++, m--)
+            x = 0; // Inicialização (parte 1 do for)
+            y = s - 1; // Inicialização (parte 2 do for)
+            while (x < y) // Condição de parada do loop
+                {
+                    n = str[x];
+                    str[x] = str[y];
+                    str[y] = n;
+                    x++; // Incremento/Decremento (parte 1)
+                    y--; // Incremento/Decremento (parte 2)
+                }
+        }
+}
+
+int main ()
+{
+    int i=0, j=0;
+    char matriz [linha][coluna][tam];
+    char matriz_original [linha][coluna][tam];
+
+    // Substituição do for externo por while:
+    // for (i=0; i<3; i++)
+    while (i < 3)
+    {
+        // Substituição do for interno por while:
+        // for (j=0; j<3; j++)
+        while (j < 3)
+        {
+            printf("Digite a string [%d][%d]", i, j);
+
+            fgets(matriz[i][j], tam, stdin);
+
+            matriz[i][j][strcspn(matriz[i][j], "\n")] = '\0';
+            
+            strcpy(matriz_original[i][j], matriz[i][j]);
+
+            MInvertida(matriz[i][j]);
+            
+            j++; // Incremento (parte 3 do for interno)
+        }
+        
+        i++; // Incremento (parte 3 do for externo)
+    }
+
+    printf("Matriz invertida:\n");
+
+    // Substituição do for externo por while:
+    // for (i=0;i<3;i++)
+    i = 0;
+    while (i < 3)
+    {
+        // Substituição do for interno por while:
+        // for (j=0;j<3;j++)
+        j = 0;
+        while (j < 3)
+        {
+            printf("%s ", matriz[i][j]);
+            j++; // Incremento (parte 3 do for interno)
+        }
+
+        printf("\n");
+        i++; // Incremento (parte 3 do for externo)
+    }
+    
+    printf("\n\nMatriz original:\n");
+    i = 0;
+    while (i < 3)
+    {
+        j = 0;
+        while (j < 3)
+        {
+            printf("%s ", matriz_original[i][j]);
+            j++;
+        }
+
+        printf("\n");
+        i++; // Incremento (parte 3 do for externo)
+    }
+
+    return 0;
+}
