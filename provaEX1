@@ -14,17 +14,15 @@ void MInvertida (char str[])
 
     if (strchr("aeiouAEIOU", str[0]))
         {
-            // Substituição do for por while:
-            // for (l=0, m=v-1; l<m; l++, m--)
-            x = 0; // Inicialização (parte 1 do for)
-            y = s - 1; // Inicialização (parte 2 do for)
-            while (x < y) // Condição de parada do loop
+            x = 0; 
+            y = s - 1; 
+            while (x < y) 
                 {
                     n = str[x];
                     str[x] = str[y];
                     str[y] = n;
-                    x++; // Incremento/Decremento (parte 1)
-                    y--; // Incremento/Decremento (parte 2)
+                    x++; 
+                    y--; 
                 }
         }
 }
@@ -35,12 +33,8 @@ int main ()
     char matriz [linha][coluna][tam];
     char matriz_original [linha][coluna][tam];
 
-    // Substituição do for externo por while:
-    // for (i=0; i<3; i++)
     while (i < 3)
     {
-        // Substituição do for interno por while:
-        // for (j=0; j<3; j++)
         while (j < 3)
         {
             printf("Digite a string [%d][%d]", i, j);
@@ -53,33 +47,28 @@ int main ()
 
             MInvertida(matriz[i][j]);
             
-            j++; // Incremento (parte 3 do for interno)
+            j++;
         }
         
-        i++; // Incremento (parte 3 do for externo)
+        i++;
     }
 
     printf("Matriz invertida:\n");
-
-    // Substituição do for externo por while:
-    // for (i=0;i<3;i++)
     i = 0;
     while (i < 3)
     {
-        // Substituição do for interno por while:
-        // for (j=0;j<3;j++)
         j = 0;
         while (j < 3)
         {
             printf("%s ", matriz[i][j]);
-            j++; // Incremento (parte 3 do for interno)
+            j++;
         }
 
         printf("\n");
-        i++; // Incremento (parte 3 do for externo)
+        i++;
     }
     
-    printf("\n\nMatriz original:\n");
+    printf("\nMatriz original:\n");
     i = 0;
     while (i < 3)
     {
@@ -91,7 +80,7 @@ int main ()
         }
 
         printf("\n");
-        i++; // Incremento (parte 3 do for externo)
+        i++;
     }
 
     return 0;
